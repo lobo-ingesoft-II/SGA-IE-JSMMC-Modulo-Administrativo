@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from httpx import AsyncClient  # Para realizar peticiones HTTP hacia la API de autenticación
-from app.schemas.usuario_schema import CrearUsuario, UsuarioUpdate
-
+from app.schemas.usuario_schema import CrearUsuario, UsuarioUpdate, ProfesorResponse, AcudienteResponse, AdministradorResponse
+from typing import List
+from fastapi import Query
 # Definir la URL base para la API de autenticación
 AUTH_API_URL = "http://localhost:8009/admin"
 
@@ -64,4 +65,50 @@ async def eliminar_usuario(id_usuario: int):
             raise HTTPException(status_code=response.status_code, detail="Error al eliminar usuario")
         return response.json()
 
+# Obtener todos los profesores
+@router.get("/profesores", response_model=List[ProfesorResponse])
+async def obtener_profesores(
+    #skip: int = Query(0, description="Número de registros a saltar"),
+    limit: int = Query(100, description="Límite de registros por página")
+):
+    async with AsyncClient() as client:
+        response = await client.get(
+            f"{AUTH_API_URL}/profesores",
+            params={"limit": limit}
+        )
+        if response.status_code != 200:
+            error_detail = response.json().get("detail", "Error al obtener profesores")
+            raise HTTPException(status_code=response.status_code, detail=error_detail)
+        return response.json()
 
+# Obtener todos los acudientes
+@router.get("/acudientes", response_model=List[AcudienteResponse])
+async def obtener_acudientes(
+    #skip: int = Query(0, description="Número de registros a saltar"),
+    limit: int = Query(100, description="Límite de registros por página")
+):
+    async with AsyncClient() as client:
+        response = await client.get(
+            f"{AUTH_API_URL}/acudientes",
+            params={"limit": limit}
+        )
+        if response.status_code != 200:
+            error_detail = response.json().get("detail", "Error al obtener acudientes")
+            raise HTTPException(status_code=response.status_code, detail=error_detail)
+        return response.json()
+
+# Obtener todos los administradores
+@router.get("/administradores", response_model=List[AdministradorResponse])
+async def obtener_administradores(
+    #skip: int = Query(0, description="Número de registros a saltar"),
+    limit: int = Query(100, description="Límite de registros por página")
+):
+    async with AsyncClient() as client:
+        response = await client.get(
+            f"{AUTH_API_URL}/administradores",
+            params={"limit": limit}
+        )
+        if response.status_code != 200:
+            error_detail = response.json().get("detail", "Error al obtener administradores")
+            raise HTTPException(status_code=response.status_code, detail=error_detail)
+        return response.json()

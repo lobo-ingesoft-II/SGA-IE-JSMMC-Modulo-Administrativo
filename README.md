@@ -86,6 +86,60 @@ pip install -r requirements.txt
 - **Error**: 
   - Si el usuario no se encuentra, se devuelve un error con el detalle: `"Usuario no encontrado."`.
 
+## Listar profesores
+- **Método**: `GET`
+- **Ruta**: `/portal_admin/profesores?limit=100`
+- **Parámetros**:
+  - `limit` (opcional): Número máximo de resultados a devolver (valor por defecto: 100)
+- **Respuesta exitosa**:
+ ```json
+  [
+    {
+      "id_usuario": 0,
+      "id_profesor": 0,
+      "nombres": "string",
+      "apellidos": "string",
+      "email": "string"
+    }
+  ]
+
+```
+## Listar acudientes
+- **Método**: `GET`
+- **Ruta**: `/portal_admin/acudientes?limit=100`
+- **Parámetros**:
+  - `limit` (opcional): Número máximo de resultados a devolver (valor por defecto: 100)
+- **Respuesta exitosa**:
+ ```json
+  [
+    {
+      "id_usuario": 0,
+      "id_acudiente": 0,
+      "nombres": "string",
+      "apellidos": "string",
+      "email": "string"
+    }
+  ]
+
+```
+## Listar administradores
+- **Método**: `GET`
+- **Ruta**: `/portal_admin/administradores?limit=100`
+- **Parámetros**:
+  - `limit` (opcional): Número máximo de resultados a devolver (valor por defecto: 100)
+- **Respuesta exitosa**:
+ ```json
+ [
+  {
+    "id_usuario": 0,
+    "id_administrador": 0,
+    "nombres": "string",
+    "apellidos": "string",
+    "email": "string"
+  }
+]
+
+```
 ## Ejecutar la API:
 
 ```bash
