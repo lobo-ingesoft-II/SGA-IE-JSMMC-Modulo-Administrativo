@@ -26,3 +26,24 @@ class UsuarioUpdate(BaseModel):
     contrasena: Optional[str] = None
     rol: Optional[str] = None
     datos_adicionales: Optional[dict] = None
+
+class ProfesorResponse(BaseModel):
+    id_usuario: int
+    id_profesor: int
+    nombres: str
+    apellidos: str
+    email: str
+
+class AcudienteResponse(BaseModel):
+    id_usuario: int
+    id_acudiente: int
+    nombres: str
+    apellidos: str
+    email: str
+
+class AdministradorResponse(BaseModel):
+    id_usuario: int
+    id_administrador: int
+    nombres: str
+    apellidos: str
+    email: str
