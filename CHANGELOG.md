@@ -2,6 +2,11 @@
 
 Todas las modificaciones importantes realizadas en el proyecto se documentan en este archivo.
 ---
+## [1.0.3] - 2025-07-16
+### ✅ Añadido
+
+- Se Agrego la observabilidad con prometheus.
+---
 ## [1.0.2] - 2025-07-16
 ### ✅ Añadido
 
