@@ -1,6 +1,13 @@
 # 📄 CHANGELOG
 
 Todas las modificaciones importantes realizadas en el proyecto se documentan en este archivo.
+---
+## [1.0.2] - 2025-07-16
+### ✅ Añadido
+
+- Se Agregaron las pruebas unitarias con pytest.
+
+---
 
 ---
 ## [1.0.1] - 2025-07-15
