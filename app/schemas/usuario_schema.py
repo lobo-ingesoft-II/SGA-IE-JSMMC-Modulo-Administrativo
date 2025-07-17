@@ -32,6 +32,9 @@ class ProfesorResponse(BaseModel):
     id_profesor: int
     nombres: str
     apellidos: str
+    tipo_documento: str = Field(..., alias="tipoDocumento")
+    documento_identidad: str = Field(..., alias="documentoIdentidad")
+    telefono: str
     email: str
 
 class AcudienteResponse(BaseModel):
@@ -39,6 +42,9 @@ class AcudienteResponse(BaseModel):
     id_acudiente: int
     nombres: str
     apellidos: str
+    tipo_documento: str = Field(..., alias="tipoDocumento")
+    documento_identidad: str = Field(..., alias="documentoIdentidad")
+    telefono: str
     email: str
 
 class AdministradorResponse(BaseModel):
@@ -46,4 +52,7 @@ class AdministradorResponse(BaseModel):
     id_administrador: int
     nombres: str
     apellidos: str
+    tipo_documento: str = Field(..., alias="tipoDocumento")
+    documento_identidad: str = Field(..., alias="documentoIdentidad")
+    telefono: str
     email: str

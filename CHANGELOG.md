@@ -2,6 +2,11 @@
 
 Todas las modificaciones importantes realizadas en el proyecto se documentan en este archivo.
 ---
+## [1.0.4] - 2025-07-17
+### ✅ Añadido
+
+- Agregamos nuevos campos en la respuesta al consultar los usuarios, como el tipo de documento, el numero de documento y el telefono.
+---
 ## [1.0.3] - 2025-07-16
 ### ✅ Añadido
 
