@@ -35,6 +35,7 @@ class ProfesorResponse(BaseModel):
     tipo_documento: str = Field(..., alias="tipoDocumento")
     documento_identidad: str = Field(..., alias="documentoIdentidad")
     telefono: str
+    estado: str
     email: str
 
 class AcudienteResponse(BaseModel):
@@ -45,6 +46,7 @@ class AcudienteResponse(BaseModel):
     tipo_documento: str = Field(..., alias="tipoDocumento")
     documento_identidad: str = Field(..., alias="documentoIdentidad")
     telefono: str
+    estado: str
     email: str
 
 class AdministradorResponse(BaseModel):
@@ -55,4 +57,5 @@ class AdministradorResponse(BaseModel):
     tipo_documento: str = Field(..., alias="tipoDocumento")
     documento_identidad: str = Field(..., alias="documentoIdentidad")
     telefono: str
+    estado: str
     email: str
